@@ -13,7 +13,7 @@ const Profile = () => {
 
     // useEffect(() => {
     //     // Fetch user data from the API
-    //     axios.get('http://localhost:5000/api/user/profile')
+    //     axios.get('https://serverharizon.onrender.com/api/user/profile')
     //         .then(response => {
     //             setFormData({
     //                 ...formData,
@@ -39,7 +39,7 @@ const Profile = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission (e.g., update user profile in the database)
-        axios.put('http://localhost:5000/api/user/profile', formData)
+        axios.put('https://serverharizon.onrender.com/api/user/profile', formData)
             .then(response => {
                 alert('Profile updated successfully!');
             })

@@ -10,7 +10,7 @@ function Completed() {
 
     useEffect(() => {
         // Fetch completed customer data from the API
-        axios.get('http://localhost:5000/api/contacts/completed')
+        axios.get('https://serverharizon.onrender.com/api/contacts/completed')
             .then(response => {
                 setCompletedCustomers(response.data);
             })
@@ -22,7 +22,7 @@ function Completed() {
     const handleDeleteCustomer = (customerId) => {
         const confirmed = window.confirm("Are you sure you want to delete this customer?");
         if (confirmed) {
-            axios.delete(`http://localhost:5000/api/contacts/${customerId}`)
+            axios.delete(`https://serverharizon.onrender.com/api/contacts/${customerId}`)
                 .then(response => {
                     setCompletedCustomers(completedCustomers.filter(customer => customer._id !== customerId));
                     toast.success('Customer deleted successfully!');

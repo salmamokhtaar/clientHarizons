@@ -11,7 +11,7 @@ function Reports() {
 
     useEffect(() => {
         // Fetch report data from the API
-        axios.get('http://localhost:5000/api/reports')
+        axios.get('https://serverharizon.onrender.com/api/reports')
             .then(response => {
                 setReportData(response.data);
             })

@@ -21,7 +21,7 @@ function UpdateCustomer({ customer, onUpdate }) {
 
     const handleStatusChange = (e) => {
         const { value } = e.target;
-        axios.put(`http://localhost:5000/api/contacts/${formData._id}/status`, { status: value })
+        axios.put(`https://serverharizon.onrender.com/api/contacts/${formData._id}/status`, { status: value })
             .then(response => {
                 setFormData({ ...formData, status: value });
             })
@@ -33,7 +33,7 @@ function UpdateCustomer({ customer, onUpdate }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:5000/api/contacts/${formData._id}`, formData)
+        axios.put(`https://serverharizon.onrender.com/api/contacts/${formData._id}`, formData)
             .then(response => {
                 onUpdate(response.data.updatedContact);
                 toast.success(' updated successfully!');

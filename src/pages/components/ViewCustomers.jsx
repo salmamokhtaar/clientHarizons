@@ -12,7 +12,7 @@ function ViewCustomers() {
 
     useEffect(() => {
         // Fetch customer data from the API
-        axios.get('http://localhost:5000/api/contacts/')
+        axios.get('https://serverharizon.onrender.com/api/contacts/')
             .then(response => {
                 setCustomers(response.data);
             })
@@ -22,7 +22,7 @@ function ViewCustomers() {
     }, []);
 
     const handleUpdateCustomer = (updatedCustomer) => {
-        axios.put(`http://localhost:5000/api/contacts/${updatedCustomer._id}`, updatedCustomer)
+        axios.put(`https://serverharizon.onrender.com/api/contacts/${updatedCustomer._id}`, updatedCustomer)
             .then(response => {
                 const updatedCustomers = customers.map(customer =>
                     customer._id === updatedCustomer._id ? updatedCustomer : customer
@@ -40,7 +40,7 @@ function ViewCustomers() {
     const handleDeleteCustomer = (customerId) => {
         const confirmed = window.confirm("Are you sure you want to delete this customer?");
         if (confirmed) {
-            axios.delete(`http://localhost:5000/api/contacts/${customerId}`)
+            axios.delete(`https://serverharizon.onrender.com/api/contacts/${customerId}`)
                 .then(response => {
                     setCustomers(customers.filter(customer => customer._id !== customerId));
                     toast.success('Customer deleted successfully!');
@@ -53,7 +53,7 @@ function ViewCustomers() {
     };
 
     const handleStatusChange = (customerId, status) => {
-        axios.put(`http://localhost:5000/api/contacts/${customerId}/status`, { status })
+        axios.put(`https://serverharizon.onrender.com/api/contacts/${customerId}/status`, { status })
             .then(response => {
                 const updatedCustomers = customers.map(customer =>
                     customer._id === customerId ? { ...customer, status } : customer
