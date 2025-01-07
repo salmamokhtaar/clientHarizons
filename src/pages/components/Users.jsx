@@ -12,7 +12,7 @@ function Users() {
 
     useEffect(() => {
         // Fetch user data from the API
-        axios.get('http://localhost:5000/api/users')
+        axios.get('https://serverharizon.onrender.com')
             .then(response => {
                 setUsers(response.data);
             })
@@ -22,7 +22,7 @@ function Users() {
     }, []);
 
     const handleUpdateUser = (updatedUser) => {
-        axios.put(`http://localhost:5000/api/users/${updatedUser._id}`, updatedUser)
+        axios.put(`https://serverharizon.onrender.com/${updatedUser._id}`, updatedUser)
             .then(response => {
                 const updatedUsers = users.map(user =>
                     user._id === updatedUser._id ? updatedUser : user
@@ -40,7 +40,7 @@ function Users() {
     const handleDeleteUser = (userId) => {
         const confirmed = window.confirm("Are you sure you want to delete this user?");
         if (confirmed) {
-            axios.delete(`http://localhost:5000/api/users/${userId}`)
+            axios.delete(`https://serverharizon.onrender.com/${userId}`)
                 .then(response => {
                     setUsers(users.filter(user => user._id !== userId));
                     toast.success('User deleted successfully!');

@@ -72,7 +72,6 @@
 // import Login from './components/Login';
 // import Signup from './components/SignUp';
 
-// export default function App() {
 //   const aboutRef = useRef(null);
 //   const servicesRef = useRef(null);
 //   const contactRef = useRef(null);
