@@ -12,7 +12,7 @@ function Users() {
 
     useEffect(() => {
         // Fetch user data from the API
-        axios.get('https://serverharizon.onrender.com')
+        axios.get('https://serverharizon.onrender.com/api/users')
             .then(response => {
                 setUsers(response.data);
             })
