@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Styles for sticky header */
+header {
+    transition: all 0.3s; /* Smooth transition for padding */
+  }
+  
+  header.sticky {
+    padding: 10px; /* Reduced padding for sticky state */
+  }
+  
+  /* Adjust other styles as necessary */
