@@ -22,7 +22,7 @@ function Users() {
     }, []);
 
     const handleUpdateUser = (updatedUser) => {
-        axios.put(`https://serverharizon.onrender.com/${updatedUser._id}`, updatedUser)
+        axios.put(`https://serverharizon.onrender.com/api/users/${updatedUser._id}`, updatedUser)
             .then(response => {
                 const updatedUsers = users.map(user =>
                     user._id === updatedUser._id ? updatedUser : user
@@ -40,7 +40,7 @@ function Users() {
     const handleDeleteUser = (userId) => {
         const confirmed = window.confirm("Are you sure you want to delete this user?");
         if (confirmed) {
-            axios.delete(`https://serverharizon.onrender.com/${userId}`)
+            axios.delete(`https://serverharizon.onrender.com/api/users/${userId}`)
                 .then(response => {
                     setUsers(users.filter(user => user._id !== userId));
                     toast.success('User deleted successfully!');

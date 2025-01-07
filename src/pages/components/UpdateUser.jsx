@@ -15,7 +15,7 @@ function UpdateUser({ user, onUpdate }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`https://serverharizon.onrender.com/${formData._id}`, formData)
+        axios.put(`https://serverharizon.onrender.com/api/users${formData._id}`, formData)
             .then(response => {
                 onUpdate(response.data.updatedUser);
             })
